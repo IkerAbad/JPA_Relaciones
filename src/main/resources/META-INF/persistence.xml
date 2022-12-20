@@ -3,7 +3,20 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-  <persistence-unit name="default">
-
-  </persistence-unit>
+    <persistence-unit name="default">
+        <class>models.Usuario</class>
+        <class>models.Idioma</class>
+        <class>models.Ejercicios</class>
+        <class>models.Equipo</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.56.101:3306/JPA_Ajedrez"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.connection.password" value="user"/>
+            <property name="hibernate.connection.username" value="user"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
 </persistence>

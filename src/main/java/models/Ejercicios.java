@@ -20,7 +20,13 @@ public class Ejercicios {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-    private String modelo;
+    private String nombre;
+    private String creadorNombre;
+    private String nParticipantes;
+
+    @ManyToMany(mappedBy = "ejercicios")
+    private List<Usuario> usuarios;
+
 
 
 }

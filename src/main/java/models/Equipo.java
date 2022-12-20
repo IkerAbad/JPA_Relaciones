@@ -21,10 +21,13 @@ public class Equipo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-    private Time hora_salida;
-    private Date fecha_salida;
-    private Time hora_llegada;
-    private Date fecha_llegada;
+    private String nombre;
+    private String nParticipantes;
+    private String torneo;
 
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.REMOVE)
+    private List<Usuario> usuarios;
+
+    
 
 }

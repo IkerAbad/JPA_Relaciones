@@ -20,9 +20,11 @@ public class Idioma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
-    private String codigoAeropuerto;
-    private String localidad;
     private String nombre;
-    private String pais;
+    private String abreviatura;
+
+    @OneToOne
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
+    private Usuario usuario;
 
 }

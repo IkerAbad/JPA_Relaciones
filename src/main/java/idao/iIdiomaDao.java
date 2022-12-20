@@ -1,7 +1,7 @@
 package idao;
 
 
-public interface iEjerciciosDao {
+public interface iIdiomaDao {
     
 
 }

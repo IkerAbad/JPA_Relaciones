@@ -1,13 +1,15 @@
 package dao;
 
 import idao.iUsuarioDao;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
 import models.Usuario;
 
 public class UsuarioDaoImpl extends Dao<Usuario, Integer> implements iUsuarioDao {
 
     @Override
-    public Cliente find(Integer id) {
-        return getEntityManager().find(Cliente.class, id);
+    public Usuario find(Integer id) {
+        return getEntityManager().find(Usuario.class, id);
     }
 
 

@@ -21,11 +21,24 @@ public class Usuario {
     private int id;
     private String nombre;
     private String apellidos;
-    private String dni;
+    private String username;
     private String email;
-    private String telefono;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
-    private List<Embarque> embarques;
+    @ManyToMany (cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "ejercicios_usuario",
+            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName
+                    = "id"),
+            inverseJoinColumns = @JoinColumn(name = "ejercicios_id",
+                    referencedColumnName = "id"))
+    private List<Ejercicios> ejercicios;
+
+    @ManyToOne
+    @JoinColumn(name = "equipo_id", referencedColumnName = "id")
+    private Equipo equipo;
+
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+    private Idioma idioma;
+
 
 }

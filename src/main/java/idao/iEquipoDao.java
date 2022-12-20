@@ -1,2 +1,4 @@
-package idao;public interface iEquipoDao {
+package idao;
+
+public interface iEquipoDao {
 }
